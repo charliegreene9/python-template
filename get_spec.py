@@ -55,6 +55,7 @@ gpus = GPUtil.getGPUs()
 
 if not gpus:
     print("No GPU detected.")
+    device_data["GPU"] = "NA"
 else:
     for i, gpu in enumerate(gpus):
         device_data["GPU_{i + 1}_ID"] = gpu.id

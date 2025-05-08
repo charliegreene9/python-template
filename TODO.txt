@@ -1,0 +1,8 @@
+X Add pyproject.toml
+Setup the pre-commit hooks
+Format code
+Generic metadata for software
+Create hook to add minimum requirements
+Make sure requirements.txt covers all basics
+Test in a VM
+Include autodocstring??
