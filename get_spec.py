@@ -69,3 +69,5 @@ json_object = json.dumps(device_data, indent=4)
 # Writing to sample.json
 with open("Development_spec.json", "w") as outfile:
     outfile.write(json_object)
+
+# THIS IS A TEST COMMENT TO SEE IF THE PRE_COMMIT IS WORKING FOR THE MAX LINE LENGTH OR NOT, THIS SHOULD HAVE SURPASSED THE LIMIT BY A LONG WAY
