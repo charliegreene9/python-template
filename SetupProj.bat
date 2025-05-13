@@ -12,4 +12,6 @@ CALL .venv/scripts/activate
 uv init
 :: Make the venv install everything from requirements.txt
 uv add -r requirements.txt
+pre-commit install
+python get_spec.py
 PAUSE
