@@ -19,9 +19,11 @@ line-length = 79                 # Line length for formatting
 target-version = "py311"         # Target Python version
 
 [tool.ruff.lint]
-select = ["E501", "I"]
-ignore = []                 # Example of ignoring specific rules
+select = ["E", "I", "F", "B"]
+ignore = ["E501"]                 # Example of ignoring specific rules
 fixable = ["ALL"]           # Allow automatic fixes for all fixable issues
+# Any lint rule can be ignored by adding a "# noqa" comment to the line in question
+
 
 [tool.ruff.format]
 docstring-code-format = true

@@ -2,6 +2,3 @@ ruff
 psutil
 gputil
 pre-commit
-black
-flake8
-isort
