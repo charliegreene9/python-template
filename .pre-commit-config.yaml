@@ -16,8 +16,10 @@ repos:
       # Run the linter.
     -   id: ruff
         # Avoiding running on Jupyter Notebooks, fix linting issues
-        types_or: [ python, pyi ]
-        args: [ --fix ]
+        #types_or: [ python, pyi ]
+        args: [ "--fix" ]
+        stages: [pre-commit]
       # Run the formatter.
     -   id: ruff-format
-        types_or: [ python, pyi ]
+        #types_or: [ python, pyi ]
+        stages: [pre-commit]
