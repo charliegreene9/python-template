@@ -1,8 +1,21 @@
 ::&commat;echo off
 :: Check if UV is installed
-if exist "C:\Users\%USERNAME%\.local\bin\uv.exe" GOTO CreateVenv
+if exist "C:\Users\%USERNAME%\.local\bin\uv.exe" GOTO :CreateVenv
 :: If not then install it
-powershell -c "irm https://astral.sh/uv/install.ps1 | more"
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+:: Add the path to PATH
+:: First check if it is run in cmd or powershell to provide the right command
+:: Powershell automatically adds user-specific path in PSModulePath upon starting
+echo %PSModulePath% | findstr /L %USERPROFILE% >NUL
+IF %ERRORLEVEL% EQU 0 goto :ISPOWERSHELL
+
+echo Not running from Powershell
+SET Path=C:\Users\%USERNAME%\.local\bin;%Path%
+
+GOTO :CreateVenv
+
+:ISPOWERSHELL
+$env:Path = "C:\Users\%USERNAME%\.local\bin;$env:Path"
 :: Now invoke it to create a venv
 :CreateVenv
 uv venv --python 3.11.6
